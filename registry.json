@@ -1,0 +1,16 @@
+{
+  "game": {
+    "repository": "https://github.com/ValjangEngine/ValjangEngine-game",
+    "plugins": {
+      "florentpoujol/ftext": "https://github.com/florentpoujol/ValjangEngine-game-ftext-plugin"
+    }
+  },
+  "love2d": {
+    "repository": "https://github.com/ValjangEngine/ValjangEngine-love2d",
+    "plugins": {}
+  },
+  "web": {
+    "repository": "https://github.com/ValjangEngine/ValjangEngine-web",
+    "plugins": {}
+  }
+}

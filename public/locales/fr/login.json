@@ -1,0 +1,7 @@
+{
+  "welcome": "Serveur privé de Valjang.",
+  "password": "Mot de passe du serveur",
+  "username": "Nom d'utilisateur",
+  "usernamePatternDescription": "Les caractères valides sont : lettres, chiffres, tirets et tirets du bas.",
+  "logIn": "Connexion"
+}

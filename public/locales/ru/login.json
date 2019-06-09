@@ -1,0 +1,8 @@
+{
+  "title": "Вход",
+  "welcome": "Привествуем на сервере ValjangEngine!",
+  "password": "Пароль сервера",
+  "username": "Имя пользователя",
+  "usernamePatternDescription": "Допустимые символы: буквы, цифры, тире и подчеркивания.",
+  "logIn": "Войти"
+}

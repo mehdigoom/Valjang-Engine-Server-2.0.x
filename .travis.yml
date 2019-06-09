@@ -1,0 +1,29 @@
+sudo: false
+language: node_js
+node_js: "node"
+# Skip "npm install" since "npm run build" takes care of it below
+install: true
+cache:
+  directories:
+  - node_modules
+script:
+- npm run build
+notifications:
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/44f5607466509af53a93
+    on_success: change
+    on_failure: always
+    on_start: never
+before_deploy:
+- npm run package
+deploy:
+  provider: releases
+  api_key:
+    secure: fpxr/eXmdKmT9loPXtMszceszF7nFkY6xx5qrwPJXsQQAtvEUiAzJlRYbqbH2hL81KkDmhuaUtZ98WpbytU1X9wAajoLvwvlxbyvgTUgUfo0eRHque85H/CZt6S57IVv7+578mX3X3wugfeJl2b/tVaMPy6NxH9/kIa1qHmFKnRe1JO0kD1xj6P8uPbKuT+BgrsG7YZJzHe7mldBZPLR5130n8YW+9TgbPOh2aOUuQu1Yu7hLfyvn7sfYkglI20+YUtutJWtvF54UmFVtdgP2whxP6EAZjVoPnTeaKR+1o5GsSdXFcPW5tftcpN9DH1vin7u5NqgoCmLdGb3S3xOGLSkRjs45K/DgWogi3TQuuDr5ZrKltUyHw4NsQbW8xCGHw8KqPSHCCO7AgBIodTVNGLOKp2OgIj+2ei5YqZchptXNVi7qrLUO+IER9e4wAP9cMFNOBWI4z6fY1D9SGFxRFedGjygtXN1Us1HQlph8SCTQ8yKiKtoghRH0fefmr7kZYf2ykqGwz4Jx/TqRgmhfT0B+Xx13RJmyhIcXhOHrSoFYVbGEDaSW3R8yijk0Y7els0zdmkQYsI2TNuSyJqxtYtRnybQBpfyEgVRpMDOEX76inDx6eHLc1aheQisugZyHAm+xtTK8+olzob6HM3AyzDL0D+G1fwvy+c7/UH/TVQ=
+  file_glob: true
+  file: "packages/ValjangEngine-core-*.zip"
+  skip_cleanup: true
+  on:
+    repo: ValjangEngine/ValjangEngine-core
+    tags: true

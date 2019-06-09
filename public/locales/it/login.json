@@ -1,0 +1,8 @@
+{
+  "title": "Login",
+  "welcome": "Benvenuto in questo server di ValjangEngine!",
+  "password": "Password del server",
+  "username": "Nome utente",
+  "usernamePatternDescription": "I caratteri permessi sono: lettere, numeri, trattini ed underscore.",
+  "logIn": "Login"
+}

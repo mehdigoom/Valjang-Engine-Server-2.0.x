@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title #{t("hub:title")} — Valjang Engine
+    link(rel="stylesheet",href="/styles/reset.css")
+    link(rel="stylesheet",href="/styles/resizeHandle.css")
+    link(rel="stylesheet",href="/styles/treeView.css")
+    link(rel="stylesheet",href="/styles/dialogs.css")
+    link(rel="stylesheet",href="/hub/index.css")
+
+  body
+    .server-header
+      img.server-icon(src="/images/icon.png")
+      .server-name= t("common:states.connecting")
+
+    .projects-header
+      .projects-buttons.button-strip
+        button(disabled).new-project= t("hub:newProject.title")
+        button(disabled).open-project= t("hub:openProject")
+        button(disabled).edit-project= t("hub:editDetails.title")
+
+      .language-container
+        span= t("hub:language")
+        select.language
+
+    .projects-tree-view
+      .tree-loading
+        div= t("common:states.connecting")
+
+    a(href="http://ValjangEngine-html5.com/",target="_blank").server-footer
+      | ValjangEngine — HTML5 2D+3D game maker
+
+    script.
+      if (window.navigator.userAgent.indexOf("Electron") !== -1) {
+        document.body.querySelector(".server-header") .hidden = true;
+        document.body.querySelector(".server-footer") .hidden = true;
+      }
+    script(src="/SupCore.js")
+    script(src="/SupClient.js")
+    script(src="/hub/index.js")

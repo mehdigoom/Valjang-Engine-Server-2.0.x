@@ -1,0 +1,116 @@
+ol.tree {
+  list-style: none;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 0 2em 0;
+  width: 100%;
+  min-height: 100%;
+
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  &.drop-inside:before {
+    position: absolute;
+    content: "";
+    border-top: 1px solid #888;
+    left: 0;
+    right: 0;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding-left: 24px;
+
+    &:last-of-type.drop-below {
+      border-bottom: 1px solid #888;
+      padding-bottom: 0;
+    }
+  }
+
+  li.item, li.group {
+    background-clip: border-box;
+    height: 28px;
+    display: flex;
+    padding: 1px;
+    cursor: default;
+    display: flex;
+    align-items: center;
+
+    > .icon, > .toggle {
+      margin: -1px;
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      align-self: center;
+      padding: 0.25em;
+    }
+
+    &:hover { background-color: #eee; }
+
+    &.drop-above {
+      border-top: 1px solid #888;
+      padding-top: 0;
+    }
+
+    &.drop-inside {
+      border: 1px solid #888;
+      padding: 0;
+    }
+
+    &.selected { background: #beddf4; }
+  }
+
+  li.item.drop-below {
+    border-bottom: 1px solid #888;
+    padding-bottom: 0;
+  }
+
+  li.group {
+    color: #444;
+
+    > .toggle {
+      opacity: 0.5;
+      background: url(/images/treeView/group-open-dark.svg) center no-repeat;
+      cursor: pointer;
+    }
+
+    &.drop-below {
+      + ol {
+        border-bottom: 1px solid #888;
+
+        &:empty {
+          margin-top: -1px;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  li.group.collapsed {
+    > .toggle { background-image: url(/images/treeView/group-closed-dark.svg); }
+
+    + ol > ol, +ol > li { display: none; }
+  }
+}
+
+.tree-loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
