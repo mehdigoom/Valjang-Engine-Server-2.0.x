@@ -4,7 +4,7 @@
   "version": "4.0.0",
   "license": "ISC",
   "main": "./server/index.js",
-  "bin": "bin.js", 
+  "bin": "bin.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ValjangEngine/ValjangEngine-core.git"
@@ -58,6 +58,7 @@
     "async": "^1.5.2",
     "async-lock": "^0.3.8",
     "body-parser": "^1.15.2",
+    "contentful": "^7.6.0",
     "cookie-parser": "^1.4.1",
     "dnd-tree-view": "^4.0.0",
     "express": "^4.13.3",
