@@ -32,7 +32,8 @@
     "enabled": "Activé",
     "loading": "Chargement...",
     "connecting": "Connexion...",
-    "saving": "Sauvegarde..."
+    "saving": "Sauvegarde...",
+    "NoUpdate": "Aucune mise a jour"
   },
 
   "hotkeys": {

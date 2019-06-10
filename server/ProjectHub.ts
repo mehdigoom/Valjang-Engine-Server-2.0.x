@@ -63,6 +63,7 @@ export default class ProjectHub {
 
   loadProject(folderName: string, callback: (err: Error) => any) {
     const server = new ProjectServer(this.globalIO, `${this.projectsPath}/${folderName}`, this.buildsPath, (err) => {
+      
       if (err != null) { callback(err); return; }
 
       if (this.serversById[server.data.manifest.pub.id] != null) {
