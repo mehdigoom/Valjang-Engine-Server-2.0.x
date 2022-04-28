@@ -55,7 +55,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^2.6.4",
     "async-lock": "^0.3.8",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.1",
